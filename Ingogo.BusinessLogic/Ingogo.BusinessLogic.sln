@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingogo.BusinessLogic", "Ingogo.BusinessLogic\Ingogo.BusinessLogic.csproj", "{BFAB100D-D78F-4190-BBE0-0AC664CBA564}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingogo.Data", "Ingogo.Data\Ingogo.Data.csproj", "{2CC050A6-0A38-447D-BADE-55130169779D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingogo.Model", "Ingogo.Model\Ingogo.Model.csproj", "{FF9DBA9D-738E-4B07-9A00-EDE6908FF5FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingogo.Service", "Ingogo.Service\Ingogo.Service.csproj", "{732024A7-1146-4296-9ED6-7F9DED21BC9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ingogo.MVC", "Ingogo.MVC\Ingogo.MVC.csproj", "{4495908A-7C2B-416B-95FA-D15FF67D8649}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://ds3projects.dut.ac.za/tfs/group12_15
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Ingogo.BusinessLogic\\Ingogo.BusinessLogic.csproj
+		SccProjectName1 = Ingogo.BusinessLogic
+		SccLocalPath1 = Ingogo.BusinessLogic
+		SccProjectUniqueName2 = Ingogo.Data\\Ingogo.Data.csproj
+		SccProjectName2 = Ingogo.Data
+		SccLocalPath2 = Ingogo.Data
+		SccProjectUniqueName3 = Ingogo.Model\\Ingogo.Model.csproj
+		SccProjectName3 = Ingogo.Model
+		SccLocalPath3 = Ingogo.Model
+		SccProjectUniqueName4 = Ingogo.MVC\\Ingogo.MVC.csproj
+		SccProjectName4 = Ingogo.MVC
+		SccLocalPath4 = Ingogo.MVC
+		SccProjectUniqueName5 = Ingogo.Service\\Ingogo.Service.csproj
+		SccProjectName5 = Ingogo.Service
+		SccLocalPath5 = Ingogo.Service
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFAB100D-D78F-4190-BBE0-0AC664CBA564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFAB100D-D78F-4190-BBE0-0AC664CBA564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFAB100D-D78F-4190-BBE0-0AC664CBA564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFAB100D-D78F-4190-BBE0-0AC664CBA564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC050A6-0A38-447D-BADE-55130169779D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC050A6-0A38-447D-BADE-55130169779D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC050A6-0A38-447D-BADE-55130169779D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC050A6-0A38-447D-BADE-55130169779D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF9DBA9D-738E-4B07-9A00-EDE6908FF5FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9DBA9D-738E-4B07-9A00-EDE6908FF5FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9DBA9D-738E-4B07-9A00-EDE6908FF5FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9DBA9D-738E-4B07-9A00-EDE6908FF5FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{732024A7-1146-4296-9ED6-7F9DED21BC9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{732024A7-1146-4296-9ED6-7F9DED21BC9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{732024A7-1146-4296-9ED6-7F9DED21BC9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{732024A7-1146-4296-9ED6-7F9DED21BC9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4495908A-7C2B-416B-95FA-D15FF67D8649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4495908A-7C2B-416B-95FA-D15FF67D8649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4495908A-7C2B-416B-95FA-D15FF67D8649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4495908A-7C2B-416B-95FA-D15FF67D8649}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

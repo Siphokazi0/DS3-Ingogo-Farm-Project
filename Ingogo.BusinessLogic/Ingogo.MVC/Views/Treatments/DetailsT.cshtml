@@ -1,0 +1,26 @@
+﻿@model Ingogo.Model.Treatment_Managemnt.Model_View.TreatmentModelView
+
+@{
+    ViewBag.Title = "DetailsT";
+    Layout = "~/Views/Shared/_FarmManager.cshtml";
+}
+
+
+
+<div>
+    <h2><span><i class="glyphicon glyphicon-briefcase"></i></span>&nbsp;Treatment Details</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tname)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditT", new { id = Model.Tid }) |
+    @Html.ActionLink("Back to List", "GetAllT")
+</p>

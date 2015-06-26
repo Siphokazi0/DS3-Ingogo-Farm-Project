@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Ingogo.Model.Treatment_Managemnt.Model_View.TreatmentModelView>
+
+@{
+    ViewBag.Title = "GetAllT";
+    Layout = "~/Views/Shared/_FarmManager.cshtml";
+    
+}
+
+<h2><span><i class="glyphicon glyphicon-briefcase"></i></span>&nbsp;Treatment</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddT")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditT", new { id=item.Tid }) |
+            @Html.ActionLink("Details", "DetailsT", new { id=item.Tid }) |
+            @Html.ActionLink("Delete", "DeleteT", new { id=item.Tid })
+        </td>
+    </tr>
+}
+
+</table>

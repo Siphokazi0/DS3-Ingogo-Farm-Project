@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Ingogo.Model.Animal_Management.Model_View.AnimalWeightViewPar>
+
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>
+    <span><i class="glyphicon glyphicon-eject"></i></span>&nbsp;Animals Weighed
+</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-condensed table-responsive table-striped">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateWeighted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OriginalWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AverageWeight)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateWeighted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OriginalWeight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AverageWeight)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditAnimalWeight", new { id = item.AnimalWeightId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AnimalWeightId }) |
+                @*@Html.ActionLink("Delete", "DeleteAnimalWeight", new { id = item.AnimalWeightId })*@
+            </td>
+        </tr>
+    }
+
+</table>

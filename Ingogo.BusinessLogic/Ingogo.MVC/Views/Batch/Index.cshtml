@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Ingogo.Model.Batch_Management.Model_View.BatchView>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_FarmManager.cshtml";
+}
+
+<p>Search For A Batch Using (Description or Code)</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Searh Batches:&nbsp;&nbsp;</td>
+            <td> @Html.Editor("searchstring", null, new { htmlAttributes = new { @class = "form-control", placeholder = "SearchBy Desc / Code" } })</td>
+            <td>&nbsp;&nbsp;<input type="submit" value="Search" class="btn btn-primary"></td>
+            <br/>
+       
+        </tr>
+    </table>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BatchTypeViews.BatchTypeDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BatchCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumOfAnimals)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Agerange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wiegth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Totalcost)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BatchTypeViews.BatchTypeDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BatchCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumOfAnimals)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agerange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wiegth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Totalcost)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditBatch", new {id = item.Batchid}) |
+                @Html.ActionLink("Details", "Details", new {id = item.Batchid})
+             
+            </td>
+        </tr>
+    }
+
+</table>
+@if (!Model.Any())
+{
+    <tr>
+        <td>
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+
+
+                </button>
+                <div><h4>No Result Found</h4></div>
+
+            </div>
+        </td>
+    </tr>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

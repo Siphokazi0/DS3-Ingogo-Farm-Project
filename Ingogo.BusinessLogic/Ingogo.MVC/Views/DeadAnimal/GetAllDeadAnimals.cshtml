@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Ingogo.Model.Animal_Management.Model_View.Animalpar>
+
+@{
+    ViewBag.Title = "GetAllDeadAnimals";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>GetAllDeadAnimals</h2>
+
+<p>
+    @Html.ActionLink("Create New", "InsertDeadAnimals")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AniCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BatchTypeDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AniColor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AniFeedingStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AniAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AniGender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AniHealthStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AniCurrentCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AniSaleStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AniTotCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalValue)
+        </th>
+   
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AniCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BatchTypeDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AniColor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AniFeedingStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AniAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AniGender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AniHealthStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AniCurrentCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AniSaleStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AniTotCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnimalValue)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdateDeadAnimals", new { id=item.AnimalId }) |
+            @Html.ActionLink("Details", "DeadAnimalDetails", new { id=item.AnimalId }) |
+            @Html.ActionLink("Delete", "DeleteDeadAnimals", new { id=item.AnimalId })
+        </td>
+    </tr>
+}
+
+</table>

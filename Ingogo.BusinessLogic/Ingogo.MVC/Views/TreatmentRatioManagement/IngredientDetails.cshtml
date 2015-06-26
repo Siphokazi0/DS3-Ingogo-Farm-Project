@@ -1,0 +1,60 @@
+﻿@model Ingogo.Model.Treatment_Managemnt.Model_View.IngredientsViewPar
+
+@{
+    ViewBag.Title = "IngredientDetails";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>IngredientDetails</h2>
+
+<div>
+    <h4>TreatmentIngredients</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumIngredients)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumIngredients)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ingredientprice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ingredientprice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientMass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientMass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditIngredient", new { id = Model.IngredientId }) |
+    @Html.ActionLink("Back to List", "GetAllIngredients")
+</p>

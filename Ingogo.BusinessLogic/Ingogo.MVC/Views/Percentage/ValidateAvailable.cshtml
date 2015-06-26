@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "ValidateAvailable";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>Oops!</h2>
+
+<div>
+    <strong>Ingredient not available</strong>
+</div>
+<hr/>
+<div class="alert alert-danger">@TempData["message"]</div>
+<hr/>
+<div class="bg-gray">
+    <br />
+</div>
+<div class="bg- new">@Html.ActionLink("Select New Ingredient?", "AddPercentage")</div>
+<div class="bg-gray">
+    <br />
+</div>
+<div class="bg- new">@Html.ActionLink("View all feeding schemes", "GetAllSchemes", "FeedingScheme")</div>
+<div class="bg-gray">
+    <br />
+</div>

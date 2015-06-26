@@ -1,0 +1,57 @@
+﻿@model Ingogo.Model.Treatment_Managemnt.Model_View.TreatmentRatioViewPar
+
+@{
+    ViewBag.Title = "DeleteRatio";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>DeleteRatio</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TreatmentRatio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TreatmentPercentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TreatmentPercentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TreatPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TreatPrice)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "RatioManagement")
+        </div>
+    }
+</div>

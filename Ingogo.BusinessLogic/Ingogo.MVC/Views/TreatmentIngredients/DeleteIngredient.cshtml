@@ -1,0 +1,72 @@
+﻿@model Ingogo.Model.Treatment_Managemnt.Model_View.IngredientsViewPar
+
+@{
+    ViewBag.Title = "DeleteIngredient";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>DeleteIngredient</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TreatmentIngredients</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumIngredients)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumIngredients)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ingredientprice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ingredientprice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientMass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientMass)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMass)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "GetAll")
+        </div>
+    }
+</div>

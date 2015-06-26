@@ -1,0 +1,36 @@
+﻿@model Ingogo.Model.Animal_Management.Model_View.FeedingSchemeView
+
+@{
+    ViewBag.Title = "AddFeedingScheme";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>Add Feeding Scheme</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Enter Details Below</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.BatchTypeid, "Animal Category", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownList("BatchTypeid", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BatchTypeid, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "GetAllSchemes")
+</div>

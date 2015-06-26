@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Ingogo.Model.Purchase_Management.Model_View.FeedingStockView>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_AdminClerk.cshtml";
+}
+
+<h2><span><i class="glyphicon glyphicon-search"></i></span>&nbsp;Search</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Searh Stock:</td>
+            <td>@Html.TextBox("search", null, new {htmlAttributes = new {@class = "form-control"}})</td>
+            <td><input type="submit" value="Search" class="btn btn-primary"></td>
+        </tr>
+    </table>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfItems)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfPurchase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpairyDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfItems)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfPurchase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpairyDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdateFeedingStock", new { id=item.FeedingStockId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FeedingStockId }) 
+            @*@Html.ActionLink("Delete", "DeleteFeedingStock", new { id=item.FeedingStockId })*@
+        </td>
+    </tr>
+}
+
+</table>

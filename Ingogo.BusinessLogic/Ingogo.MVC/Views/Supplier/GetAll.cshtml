@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Ingogo.Model.Supplier_Management.Model_View.SuppliersView>
+
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Supervisor.cshtml";
+}
+
+<h2>GetAll</h2>
+
+<p>
+    @Html.ActionLink("Add Supplier", "CreateSupplier")
+</p>
+<table class="table table-bordered table-hover table-condensed table-responsive table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierCellNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierTelNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierEmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierPhysicalAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierShortCode)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.BatchCode)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierStatus)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierCellNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierTelNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierEmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierPhysicalAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierShortCode)
+            </td>
+            @*<td>
+                    @Html.DisplayNameFor(model => model.BatchCode)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierStatus)
+
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Update", new { id = item.SupplierId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SupplierId }) |
+                @Html.ActionLink("Delete", "DeleteSuppliers", new { id = item.SupplierId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,100 @@
+﻿@model Ingogo.Model.Treatment_Managemnt.Model_View.TreatmentRatioModelView
+
+@{
+    //ViewBag.Title = "AddRatio";
+    //Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddTreatmentIngredient</title>
+
+</head>
+<body>
+
+   @using (Ajax.BeginForm("AddRatio", null, new AjaxOptions() { HttpMethod = "POST", InsertionMode = InsertionMode.Replace }, new { @class = "form-horizontal", role = "form" }))
+   {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h2>Treatment Ratio</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.TotalMass, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.TotalMass, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TotalMass, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.TreatPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.TreatPrice, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TreatPrice, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+            <div class="form-group">
+                @Html.LabelFor(model => model.Tid, "Tid", htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    @Html.DropDownList("Tid", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Tid, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IngredientId, "IngredientId", htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    @Html.DropDownList("IngredientId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IngredientId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TreatmentPercentageId, "TreatmentPercentageId", htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-7">
+                            @Html.DropDownList("TreatmentPercentageId", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-2">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal">
+                                    Add Percentage
+                                </button>
+                            </span>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.TreatmentPercentageId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-5 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h2 class="modal-title" id="myModalLabel">Add Percentage %</h2>
+                </div>
+                <div class="modal-body">
+                    @Html.Partial("AddTreatmentPercentage")
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

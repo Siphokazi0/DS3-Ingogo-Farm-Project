@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Ingogo.Model.Animal_Management.Model_View.PercentagePartialView>
+
+@{
+    ViewBag.Title = "GetAllPercentage";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>Viewing Percentage Ingredients</h2>
+
+<p>
+    @Html.ActionLink("Add Ingredient to Scheme", "AddPercentage")
+</p>
+<p>
+    @Html.ActionLink("View All Schemes","GetAllSchemes","FeedingScheme")
+</p>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model=>model.ItemName)</th>
+        <th>@Html.DisplayNameFor(model=>model.Percentage)</th>
+        <th>@Html.DisplayNameFor(model => model.SchemeCode)</th>
+        <th></th>
+    </tr>
+ @foreach (var item in Model)
+ {
+    <tr>
+        <td>@Html.DisplayFor(modelItem=>item.ItemName)</td>
+        <td>@Html.DisplayFor(modelItem => item.Percentage)</td>
+        <td>@Html.DisplayFor(modelItem => item.SchemeCode)</td>
+        <td></td>
+    </tr>
+ }
+   
+</table>
+

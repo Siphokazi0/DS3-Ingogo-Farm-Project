@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Ingogo.Model.Treatment_Managemnt.Model_View.IngredientsViewPar>
+
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>GetAll</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddIngredient")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IngredientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumIngredients)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ingredientprice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IngredientMass)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IngredientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumIngredients)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ingredientprice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IngredientMass)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditIngredient", new { id = item.IngredientId }) |
+                @Html.ActionLink("Details", "IngredientDetails", new { id = item.IngredientId }) |
+                @Html.ActionLink("Delete", "DeleteIngredient", new { id = item.IngredientId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,50 @@
+﻿@model Ingogo.Model.Treatment_Managemnt.Model_View.TreatmentRatioViewPar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TreatmentRatioViewPar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TreatmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TreatmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SumOfPecentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SumOfPecentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "GetAll")
+</p>

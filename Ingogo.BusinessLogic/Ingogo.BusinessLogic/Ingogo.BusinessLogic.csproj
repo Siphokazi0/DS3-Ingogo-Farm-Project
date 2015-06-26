@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BFAB100D-D78F-4190-BBE0-0AC664CBA564}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ingogo.BusinessLogic</RootNamespace>
+    <AssemblyName>Ingogo.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animal Management\Implementation Classes\AnimalBusiness.cs" />
+    <Compile Include="Animal Management\Implementation Classes\AnimalWeightBl.cs" />
+    <Compile Include="Animal Management\Implementation Classes\DeadAnimalBL.cs" />
+    <Compile Include="Animal Management\Implementation Classes\FeedingIngredientBl.cs" />
+    <Compile Include="Animal Management\Implementation Classes\FeedingPercentageBl.cs" />
+    <Compile Include="Animal Management\Implementation Classes\FeedingRatioBl.cs" />
+    <Compile Include="Animal Management\Implementation Classes\FeedingSchemeBl.cs" />
+    <Compile Include="Animal Management\Implementation Classes\PercentageBl.cs" />
+    <Compile Include="Animal Management\Interface Classes\IAnimalBusiness.cs" />
+    <Compile Include="Animal Management\Interface Classes\IDeadBL.cs" />
+    <Compile Include="Animal Management\Interface Classes\IFeedingIngredientBl.cs" />
+    <Compile Include="Animal Management\Interface Classes\IFeedingPercentageBl.cs" />
+    <Compile Include="Animal Management\Interface Classes\IFeedingRatioBl.cs" />
+    <Compile Include="Animal Management\Interface Classes\IFeedingSchemeBl.cs" />
+    <Compile Include="Animal Management\Interface Classes\IPercentageBl.cs" />
+    <Compile Include="Batch Management\Implementation Classes\BatchBl.cs" />
+    <Compile Include="Batch Management\Implementation Classes\BatchTypeBl.cs" />
+    <Compile Include="Batch Management\Interface Classes\IBatchBl.cs" />
+    <Compile Include="Batch Management\Interface Classes\IBatchTypeBL.cs" />
+    <Compile Include="Animal Management\Interface Classes\IAnimalWeightBl.cs" />
+    <Compile Include="Employee Management\Implementation Classes\Email.cs" />
+    <Compile Include="Employee Management\Implementation Classes\EmployeeBl.cs" />
+    <Compile Include="Employee Management\Implementation Classes\OwnerBl.cs" />
+    <Compile Include="Employee Management\Interface Classes\IEmployeeBl.cs" />
+    <Compile Include="Employee Management\Interface Classes\IOwnerBl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Supplier Management\Implementation Classes\SuppliersBl.cs" />
+    <Compile Include="Supplier Management\Interface Classes\ISuppliersBl.cs" />
+    <Compile Include="Purchase Management\Implementation Classes\FeedingStockBussiness.cs" />
+    <Compile Include="Purchase Management\Interface Classes\IFeedingStockBussiness.cs" />
+    <Compile Include="Treatment Managemnt\Implementation Classes\TreatmentBl.cs" />
+    <Compile Include="Treatment Managemnt\Implementation Classes\TreatmentIngredientsBl.cs" />
+    <Compile Include="Treatment Managemnt\Implementation Classes\TreatmentPercentageBl.cs" />
+    <Compile Include="Treatment Managemnt\Implementation Classes\TreatmentRatioBl.cs" />
+    <Compile Include="Treatment Managemnt\Implementation Classes\TreatmentRatioTotalBl.cs" />
+    <Compile Include="Treatment Managemnt\Interface Classes\ITreatmentBl.cs" />
+    <Compile Include="Treatment Managemnt\Interface Classes\ITreatmentIngredientsBl.cs" />
+    <Compile Include="Treatment Managemnt\Interface Classes\ITreatmentPercentageBl.cs" />
+    <Compile Include="Treatment Managemnt\Interface Classes\ITreatmentRatioBl.cs" />
+    <Compile Include="Treatment Managemnt\Interface Classes\ITreatmentRatioTotalBl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ingogo.Data\Ingogo.Data.csproj">
+      <Project>{2cc050a6-0a38-447d-bade-55130169779d}</Project>
+      <Name>Ingogo.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ingogo.Model\Ingogo.Model.csproj">
+      <Project>{ff9dba9d-738e-4b07-9a00-ede6908ff5fa}</Project>
+      <Name>Ingogo.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ingogo.Service\Ingogo.Service.csproj">
+      <Project>{732024a7-1146-4296-9ed6-7f9ded21bc9c}</Project>
+      <Name>Ingogo.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reporting\Implementation Classes\" />
+    <Folder Include="Reporting\Interface Classes\" />
+    <Folder Include="Sale Management\Implementation Classes\" />
+    <Folder Include="Sale Management\Interface Classes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

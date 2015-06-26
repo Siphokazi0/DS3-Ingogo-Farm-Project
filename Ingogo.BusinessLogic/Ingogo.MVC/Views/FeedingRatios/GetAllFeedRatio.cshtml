@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Ingogo.Model.Animal_Management.Model_View.FeedingRatioView>
+@{
+    ViewBag.Title = "GetAllFeedRatio";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+
+<h2>Feeding Products</h2>
+<hr/>
+<div class="row">
+    <div class="col-lg-4">
+        <table class="table table-bordered table-striped table-hover table-responsive table-condensed">
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductMass)
+                </th>
+               
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductMass)
+                    </td>
+                    @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.FeedingRatioId }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.FeedingRatioId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.FeedingRatioId })
+                    </td>*@
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+

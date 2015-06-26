@@ -1,0 +1,74 @@
+﻿@model Ingogo.Model.Batch_Management.Model_View.BatchView
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_FarmManager.cshtml";
+}
+
+<h2>Batch Details</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BatchTypeViews.BatchTypeDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BatchTypeViews.BatchTypeDesc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumOfAnimals)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumOfAnimals)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Agerange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agerange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BatchCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BatchCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Wiegth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wiegth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Totalcost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Totalcost)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Batchid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Ingogo.Model.Treatment_Managemnt.Model_View.TreatmentRatioViewPar>
+
+@*@{
+        ViewBag.Title = "GetAllRatios";
+        Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+    }*@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetAllFeedIngredient</title>
+</head>
+<body>
+    <h2>Ingredients List</h2>
+   
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info" role="alert">
+            <div>
+                <h4>Ingredient List is Empty</h4>
+                <h6>Add Ingredient To List</h6>
+            </div>
+        </div>
+    }
+    else
+    {
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TreatmentName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IngredientName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TreatmentPercentage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TotalMass)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TreatPrice)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TreatmentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IngredientName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TreatmentPercentage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalMass)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TreatPrice)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Edit", "Edit", new {id = item.TreatmentRatioId}) |
+                        @Html.ActionLink("Details", "Details", new {id = item.TreatmentRatioId}) |*@
+                        @Html.ActionLink("Delete", "DeleteRatio", new {id = item.TreatmentRatioId})
+                    </td>
+                </tr>
+            }
+
+        </table>
+    <span><i class="glyphicon glyphicon-saved"></i></span>
+    @Html.ActionLink("Proceed with Product", "AddRatioTotal", "TreatmentRatioTotal")
+    }
+</body>
+</html>

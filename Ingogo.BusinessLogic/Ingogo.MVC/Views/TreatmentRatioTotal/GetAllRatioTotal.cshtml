@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Ingogo.Model.Treatment_Managemnt.Model_View.TreatmentRatioTotalViewPar>
+
+@{
+    ViewBag.Title = "GetAllRatioTotal";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>GetAllRatioTotal</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TreatmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TreatmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>  
+    </tr>
+}
+
+</table>

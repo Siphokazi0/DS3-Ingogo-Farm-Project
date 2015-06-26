@@ -1,0 +1,104 @@
+﻿@*@model Ingogo.Model.Employee_Management.Model_View.OwnerViewModel
+
+@{
+    ViewBag.Title = "UpdateOwner";
+    Layout = "~/Views/Shared/_LogInLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SPBFI - Confirm Forgot Password</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link href="~/Content/_DashBoardFarmManager/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/_DashBoardFarmManager/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/_DashBoardFarmManager/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="login-page">
+    <div class="login-logo">
+        <a><b>Siya Pham Belie</b></a><a>Farm Ingogo</a>
+    </div> /.login-logo 
+
+    <br />
+    <br />
+    <div class="row">
+        <div class="col col-lg-6 col-lg-offset-3">
+            <div class="login-box-body">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="login-box-body col-lg-18">
+
+                            <div class="row">
+                                <section id="loginForm">
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-horizontal">
+                                            <h4>Add Personal Details To Complete Your Profile</h4>
+                                            <hr />
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            @Html.HiddenFor(model => model.UserProfileId)
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                <div class="col-md-10">
+                                                    @Html.DropDownListFor(g => g.Gender, new SelectListItem[]
+                                                    {
+                                                        new SelectListItem {Value = "Male", Text = "Male"},
+                                                        new SelectListItem {Value = "Female", Text = "Female"},
+                                                    }, "--Select Gender--", new { @class = "form-control", title = "Either Male or Female" })
+                                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            @Html.HiddenFor(model => model.Email)
+                                            @Html.HiddenFor(model => model.IsFirstTimeLogin)
+
+
+                                            <div class="form-group">
+                                                <div class="col-md-offset-2 col-md-10">
+                                                    <input type="submit" value="Save" class="btn btn-default" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+    <script src="~/Content/_DashBoardFarmManager/plugins/jQuery/jQuery-2.1.3.min.js"></script>
+    <script src="~/Content/_DashBoardFarmManager/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Content/_DashBoardFarmManager/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+</body>
+
+</html>*@
+

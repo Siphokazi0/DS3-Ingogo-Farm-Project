@@ -1,0 +1,115 @@
+﻿@model Ingogo.Model.Employee_Management.Model_View.RegisterViewModel
+
+@{
+    ViewBag.Title = "OwnerRegister";
+    Layout = "~/Views/Shared/_OwnerLayout.cshtml";
+}
+
+
+<h2><span><i class="glyphicon glyphicon-briefcase"></i></span>&nbsp;Add Employee</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Employee First Name", Title = "Example: Prince" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Employee Surname", Title = "Example: Buthelezi" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdentityNumber, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.IdentityNumber, new { htmlAttributes = new { @class = "form-control", onkeypress = "return isNumberKey(event)", maxlength = "13", @Value = "", placeholder = "Enter South African Identity Number", Title = "Must Be 13 Digits" } })
+                <script type="text/javascript">
+                    function isNumberKey(evt) {
+                        var charCode = (evt.which) ? evt.which : event.keyCode;
+                        if (charCode != 46 && charCode > 31
+                          && (charCode < 48 || charCode > 57))
+                            return false;
+
+                        return true;
+                    }
+
+                </script>
+
+                @Html.ValidationMessageFor(model => model.IdentityNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Employee Working Email Address", Title = "Example: example@somewhere.com" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhysicalAddress, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.PhysicalAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhysicalAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContactNumber, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.ContactNumber, new { htmlAttributes = new { @class = "form-control", onkeypress = "return isNumberKey(event)", maxlength = "10", @Value = "0", placeholder = "Enter Employee Cell Number", Title = "Example: 0782115579" } })
+                <script type="text/javascript">
+                    function isNumberKey(evt) {
+                        var charCode = (evt.which) ? evt.which : event.keyCode;
+                        if (charCode != 46 && charCode > 31
+                          && (charCode < 48 || charCode > 57))
+                            return false;
+
+                        return true;
+                    }
+
+                </script>
+                @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Position, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(g => g.Position, new[]
+                {
+                    new SelectListItem {Value = "Farm Manager", Text = "Farm Manager"},
+                    new SelectListItem {Value = "Supervisor", Text = "Supervisor"},
+                    new SelectListItem {Value = "Admin Clerk", Text = "Admin Clerk"},
+                    new SelectListItem {Value = "Farm Assistance", Text = "Farm Manager Assistance"}
+                }, "--Select Employee type--", new { @class = "form-control", title = "The employee could be of the listed job titles" })
+                @Html.ValidationMessageFor(model => model.Position, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add Employee" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "OwnerGetAllEmployees")
+</div>

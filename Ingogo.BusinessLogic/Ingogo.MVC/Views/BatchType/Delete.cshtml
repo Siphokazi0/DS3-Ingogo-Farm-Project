@@ -1,0 +1,42 @@
+﻿@model Ingogo.Model.Batch_Management.Model_View.BatchTypeView
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Supervisor.cshtml";
+}
+
+<h2>Delete BatchType</h2>
+
+<h1>Are you sure you want to delete this Batch?</h1>
+<div>
+    <h4>BatchTypeView</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BatchTypeid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BatchTypeid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BatchTypeDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BatchTypeDesc)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Ingogo.Model.Batch_Management.Model_View.BatchTypeView>
+
+@{
+    ViewBag.Title = "Get All BatchType";
+    Layout = "~/Views/Shared/_Supervisor.cshtml";
+}
+
+@*<h2>GetAllBatchType</h2>*@
+
+<p>
+    @Html.ActionLink("Create A New BatchType", "AddBatchType")
+</p>
+<table class="table table-bordered table-hover table-condensed table-responsive table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BatchTypeDesc)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BatchTypeDesc)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "EditBatchType", new { id = item.BatchTypeid }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BatchTypeid }) |
+                @*@Html.ActionLink("Delete", "Delete", new { id=item.BatchTypeid })*@
+            </td>
+        </tr>
+    }
+
+</table>

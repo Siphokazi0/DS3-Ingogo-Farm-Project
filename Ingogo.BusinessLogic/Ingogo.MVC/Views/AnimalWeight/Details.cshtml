@@ -1,0 +1,54 @@
+﻿@model Ingogo.Model.Animal_Management.Model_View.AnimalWeightViewPar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>
+    <span><i class="glyphicon glyphicon-eject"></i></span>&nbsp;Animal Details
+</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateWeighted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateWeighted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OriginalWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OriginalWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageWeight)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditAnimalWeight", new { id = Model.AnimalWeightId }) |
+    @Html.ActionLink("Back to List", "GetAll")
+</p>

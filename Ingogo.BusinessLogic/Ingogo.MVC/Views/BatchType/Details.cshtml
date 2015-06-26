@@ -1,0 +1,29 @@
+﻿@model Ingogo.Model.Batch_Management.Model_View.BatchTypeView
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Supervisor.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BatchTypeView</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BatchTypeDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BatchTypeDesc)
+        </dd>
+
+       
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditBatchType", new { id = Model.BatchTypeid }) |
+    @Html.ActionLink("Back to List", "GetAllBatchType")
+</p>

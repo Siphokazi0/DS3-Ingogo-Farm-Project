@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Ingogo.Model.Animal_Management.Model_View.FeedingSchemePartialView>
+
+@{
+    ViewBag.Title = "GetAllSchemes";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>Viewing All Feeding Schemes</h2>
+
+<p>
+    @Html.ActionLink("Add Feeding Scheme", "AddFeedingScheme")
+</p>
+<p>
+    @Html.ActionLink("Create Percentage","AddPercentage","Percentage")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BatchTypeDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfAnimals)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatePrepared)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumIngredients)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SchemeCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostPerAnimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalCostForScheme)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BatchTypeDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfAnimals)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePrepared)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumIngredients)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SchemeCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostPerAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCostForScheme)
+            </td>
+            <td>
+               
+            </td>
+        </tr>
+    }
+
+</table>

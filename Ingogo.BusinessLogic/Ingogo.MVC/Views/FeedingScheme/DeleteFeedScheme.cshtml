@@ -1,0 +1,57 @@
+﻿@model Ingogo.Model.Animal_Management.Model_View.FeedLotView
+
+@{
+    ViewBag.Title = "DeleteFeedScheme";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>DeleteFeedScheme</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>FeedLotView</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FeedingType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeedingType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeedingCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeedingCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalFeedingCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalFeedingCost)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "GetFeedScheme")
+        </div>
+    }
+</div>

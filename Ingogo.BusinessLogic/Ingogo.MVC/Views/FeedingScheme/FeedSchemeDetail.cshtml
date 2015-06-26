@@ -1,0 +1,51 @@
+﻿@model Ingogo.Model.Animal_Management.Model_View.FeedLotView
+
+@{
+    ViewBag.Title = "FeedSchemeDetail";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>FeedSchemeDetail</h2>
+
+<div>
+    <h4>FeedLotView</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FeedingType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeedingType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeedingCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeedingCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalFeedingCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalFeedingCost)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditFeedScheme", new { id = Model.FeedingId }) |
+    @Html.ActionLink("Back to List", "GetFeedScheme")
+</p>

@@ -1,0 +1,113 @@
+﻿@model Ingogo.Model.Animal_Management.Model_View.Animalpar
+
+@{
+    ViewBag.Title = "DeleteDeadAnimals";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>DeleteDeadAnimals</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DeadAnimalView</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BatchTypeDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BatchTypeDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AniCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AniCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AniColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AniColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AniFeedingStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AniFeedingStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AniAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AniAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AniGender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AniGender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AniHealthStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AniHealthStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AniCurrentCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AniCurrentCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AniSaleStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AniSaleStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AniTotCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AniTotCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalValue)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "GetAllDeadAnimals")
+        </div>
+    }
+</div>

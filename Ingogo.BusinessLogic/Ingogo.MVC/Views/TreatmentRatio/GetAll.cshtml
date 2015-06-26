@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Ingogo.Model.Treatment_Managemnt.Model_View.TreatmentRatioViewPar>
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>GetAll</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IngredientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TreatmentPercentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalMass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TreatPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IngredientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TreatmentPercentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalMass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TreatPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TreatmentRatioId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TreatmentRatioId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TreatmentRatioId })
+        </td>
+    </tr>
+}
+
+</table>

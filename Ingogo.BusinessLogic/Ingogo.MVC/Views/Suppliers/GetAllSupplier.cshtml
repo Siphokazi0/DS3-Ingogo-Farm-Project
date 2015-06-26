@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Ingogo.Model.Supplier_Management.Model_View.SuppliersView>
+
+@{
+    ViewBag.Title = "GetAllSupplier";
+    Layout = "~/Views/Shared/_Supervisor.cshtml";
+}
+
+<h2>GetAllSupplier</h2>
+
+<p>
+    @Html.ActionLink("Add Supplier", "AddSupplier")
+</p>
+<table class="table table-condensed table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierCellNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierTelNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhysicalAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShortCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierCellNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierTelNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+         
+        <td>
+            @Html.DisplayFor(modelItem => item.PhysicalAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShortCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+          
+            @*@Html.ActionLink("Edit", "A_DSupplier", new { id=item.SupplierId }) |*@
+            @*@Html.ActionLink("Details", "Details", new { id=item.SupplierId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SupplierId })*@
+        </td>
+    </tr>
+}
+
+</table>

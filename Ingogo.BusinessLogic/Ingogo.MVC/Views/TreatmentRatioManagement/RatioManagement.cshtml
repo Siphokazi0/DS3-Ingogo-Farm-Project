@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "RatioManagement";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="col-lg-6">
+            @{
+                Html.RenderAction("AddRatio");
+            }
+        </div>
+        <div class="col-lg-4">
+            @{
+                Html.RenderAction("GetAllRatios");
+            }
+            @*@using (Html.BeginForm(Html.BeginForm("AddFeedRatio","FeedingRatios")))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <input type="submit" value="Complete" class="btn btn-primary" />
+                        </div>
+                    </div>
+                }*@
+        </div>
+
+    </div>
+
+</div>

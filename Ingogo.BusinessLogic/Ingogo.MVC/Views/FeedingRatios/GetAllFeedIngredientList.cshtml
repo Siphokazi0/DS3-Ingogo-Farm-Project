@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Ingogo.Model.Animal_Management.Model_View.FeedingIngredientViewParAll>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetAllFeedIngredient</title>
+</head>
+<body>
+    <h2>Ingredients List</h2>
+    <hr />
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Percentage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockItem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IngredientMass)
+            </th>
+     
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Percentage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockItem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IngredientMass)
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

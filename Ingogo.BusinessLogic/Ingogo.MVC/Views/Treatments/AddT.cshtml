@@ -1,0 +1,37 @@
+﻿@model Ingogo.Model.Treatment_Managemnt.Model_View.TreatmentModelView
+
+@{
+    ViewBag.Title = "AddT";
+    Layout = "~/Views/Shared/_FarmManager.cshtml";
+}
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h2><span><i class="glyphicon glyphicon-briefcase"></i></span>&nbsp;Add Treatment</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tname, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Tname, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Treatment", Title = "Example: Inject" } })
+                @Html.ValidationMessageFor(model => model.Tname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "GetAllT")
+</div>
+
+

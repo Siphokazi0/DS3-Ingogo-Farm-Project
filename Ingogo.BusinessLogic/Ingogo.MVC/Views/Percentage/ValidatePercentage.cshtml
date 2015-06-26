@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "ValidatePercentage";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2><strong>Percentage Result</strong></h2>
+<hr/>
+<div>@TempData["Message"]</div>
+<hr/>
+<div>@Html.ActionLink("Create New Percentage", "AddPercentage")</div>
+<div>@Html.ActionLink("View all Feeding Schemes", "GetAllSchemes", "FeedingScheme")</div>
+<div>@Html.ActionLink("Add ingredient to stock","AddFeedingStock","FeedingStock")</div>

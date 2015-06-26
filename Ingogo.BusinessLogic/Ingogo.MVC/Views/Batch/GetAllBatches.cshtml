@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Ingogo.Model.Batch_Management.Model_View.BatchView>
+
+@{
+    ViewBag.Title = "GetAllBatches";
+    Layout = "~/Views/Shared/_FarmManager.cshtml";
+}
+
+<h2>Get All Batches</h2>
+
+<p>
+    @Html.ActionLink("Create A New Batch", "Create")
+</p>
+<table class="table table-bordered table-hover table-condensed table-responsive table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BatchTypeViews.BatchTypeDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumOfAnimals)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Agerange)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BatchCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wiegth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Totalcost)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BatchTypeViews.BatchTypeDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumOfAnimals)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agerange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BatchCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wiegth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Totalcost)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditBatch", new { id = item.Batchid }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Batchid }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Batchid })
+            </td>
+        </tr>
+    }
+
+</table>

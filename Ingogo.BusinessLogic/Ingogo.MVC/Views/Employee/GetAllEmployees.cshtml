@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Ingogo.Model.Employee_Management.Model_View.RegisterViewModel>
+
+@{
+    ViewBag.Title = "GetAllEmployees";
+    Layout = "~/Views/Shared/_AdminClerk.cshtml";
+}
+
+<h2><span><i class="glyphicon glyphicon-user"></i></span>&nbsp;Employees</h2>
+<hr/>
+<p>
+    <span><i class="glyphicon glyphicon-save"></i></span>@Html.ActionLink("Add Employee", "Register")
+</p>
+<table class="table table-condensed table-bordered table-responsive table-hover table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdentityNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhysicalAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdentityNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhysicalAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "EditEmployee", new {id = item.UserProfileId}) |
+            @Html.ActionLink("Details", "EmployeeDetails", new {id = item.UserProfileId}) 
+            @*@Html.ActionLink("Delete", "DeleteEmployee", new { id=item.UserProfileId })*@
+        </td>
+    </tr>
+}
+
+</table>

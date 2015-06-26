@@ -1,0 +1,48 @@
+﻿@model Ingogo.Model.Supplier_Management.Model_View.SuppliersView
+
+@{
+    ViewBag.Title = "A_DSupplier";
+    Layout = "~/Views/Shared/_OwnerLayout.cshtml";
+}
+
+<h2>Manage Approvals</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>SuppliersView</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.SupplierId)
+        @Html.HiddenFor(model => model.SupplierName)
+        @Html.HiddenFor(model => model.SupplierLastName)
+        @Html.HiddenFor(model => model.SupplierCellNo)
+        @Html.HiddenFor(model => model.SupplierTelNo)
+        @Html.HiddenFor(model => model.EmailAddress)
+        @Html.HiddenFor(model => model.PhysicalAddress)
+        @Html.HiddenFor(model => model.UserId)
+        @Html.HiddenFor(model => model.ShortCode)
+
+    
+        <div class="form-group">
+            @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(g => g.Status, new[]
+                         {
+                            new SelectListItem{Value="Approved", Text="Approve"},
+                            new SelectListItem{Value="Disapproved", Text="Disapprove"}
+                         }, "Manage Approvals", new { @class = "form-control", title = "CAn be approved or disapproved" })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

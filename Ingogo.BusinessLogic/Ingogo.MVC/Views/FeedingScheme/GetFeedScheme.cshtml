@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Ingogo.Model.Animal_Management.Model_View.FeedLotView>  
+
+@{
+    ViewBag.Title = "GetFeedScheme";
+    Layout = "~/Views/Shared/_FarmAssistance.cshtml";
+}
+
+<h2>GetFeedScheme</h2>
+
+<p>
+    @Html.ActionLink("Create Feeding", "AddFeedScheme")
+</p>
+<p>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.FeedingType)</th>
+            <th>@Html.DisplayNameFor(model => model.FeedingCost)</th>
+            <th>@Html.DisplayNameFor(model => model.NoOfDays)</th>
+            <th>@Html.DisplayNameFor(model => model.TotalFeedingCost)</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FeedingType)</td>
+                <td>@Html.DisplayFor(modelItem => item.FeedingCost)</td>
+                <td>@Html.DisplayFor(modelItem => item.NoOfDays)</td>
+                <td>@Html.DisplayFor(modelItem => item.TotalFeedingCost)</td>
+                <td>
+                    |@Html.ActionLink("Edit", "EditFeedScheme", new { id = item.FeedingId }) |
+                     @Html.ActionLink("Details", "FeedSchemeDetail", new { id = item.FeedingId })|
+                     @*@Html.ActionLink("Delete", "DeleteFeedScheme", new { id = item.FeedingId })*@
+                </td>
+            </tr>
+        }
+    </table>
+</p>

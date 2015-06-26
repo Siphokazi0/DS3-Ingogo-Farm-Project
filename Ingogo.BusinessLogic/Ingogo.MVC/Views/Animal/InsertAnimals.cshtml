@@ -1,0 +1,139 @@
+﻿@model Ingogo.Model.Animal_Management.Model_View.AnimalView
+
+@{
+    ViewBag.Title = "InsertAnimals";
+    ViewBag.Title = "Exist";
+    Layout = "~/Views/Shared/_FarmManager.cshtml";
+}
+
+<h2>Add Animals</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Animal</h4>
+        <hr/>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AniCode, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.AniCode, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.AniCode, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.BatchTypeViews.BatchTypeDesc, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.BatchTypeViews.BatchTypeDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BatchTypeViews.BatchTypeDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+        <div class="form-group">
+            @Html.LabelFor(model => model.BatchTypeid, "BatchTypeid", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("BatchTypeid", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BatchTypeid, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AniColor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.AniColor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AniColor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AniFeedingStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(g => g.AniFeedingStatus, new SelectListItem[]
+                {
+                    new SelectListItem {Value = "Grazing", Text = "Grazing"},
+                    new SelectListItem {Value = "Feeding Lot", Text = "Feeding Lot"}
+                }, "--Select Feeding Status--", new { @class = "form-control", title = "Could be Either Grazing or Feed Lot" })
+                @Html.ValidationMessageFor(model => model.AniFeedingStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AniAge, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.AniAge, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AniAge, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AniGender, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(g => g.AniGender, new SelectListItem[]
+                {
+                    new SelectListItem {Value = "Male", Text = "Male"},
+                    new SelectListItem {Value = "Female", Text = "Female"}
+                }, "--Select Gender--", new { @class = "form-control", title = "Could be Either Male or Female" })
+                @Html.ValidationMessageFor(model => model.AniGender, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AniHealthStatus, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-4">
+                @Html.DropDownListFor(g => g.AniHealthStatus, new SelectListItem[]
+                {
+                    new SelectListItem {Value = "Healthy", Text = "Healthy"},
+                    new SelectListItem {Value = "Ill", Text = "Ill"},
+                    new SelectListItem {Value = "Dead", Text = "Dead"}
+                }, "--Select Health Status--", new {@class = "form-control", title = "Could be Either Male or Female"})
+                @Html.ValidationMessageFor(model => model.AniHealthStatus, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AniCurrentCost, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.AniCurrentCost, new { htmlAtttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AniCurrentCost, "", new { @class = "text-danger" })
+                <p class="error text-danger">@ViewBag.Exist</p>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AniSaleStatus, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.AniSaleStatus, new {htmlAtttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.AniSaleStatus, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AniTotCost, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.AniTotCost, new {htmlAtttributes = new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.AniTotCost, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AnimalValue, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.AnimalValue, new { htmlAtttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AnimalValue, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+      
+        @*@Html.HiddenFor(model => model.AniCurrentCost)
+        @Html.HiddenFor(model => model.AniTotCost)
+        @Html.HiddenFor(model => model.AniCode)
+        @Html.HiddenFor(model => model.AniSaleStatus)
+        @Html.HiddenFor(model => model.AnimalValue)*@
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default"/>
+            </div>
+        </div>
+        
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "GetAllAnimals")
+</div>
